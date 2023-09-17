@@ -4,27 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep1 World!");
+        //ask for first and last name then display both on same line
+        Console.WriteLine("What is your first name?");
+        string firstName = Console.ReadLine();
 
-        //string Interpolation
-        int  myInt = 5;
-        Console.WriteLine(myInt);
-        Console.WriteLine("my int =" + myInt);
-        Console.WriteLine($"my int = {myInt}");
+        Console.WriteLine("What is your last name?");
+        string lastName = Console.ReadLine();
 
-        //ReadLine
-        Console.Write("What is your name?");
-        string name = Console.ReadLine();
-        Console.WriteLine(name);
+        Console.WriteLine($"Your name is " + firstName + ", " + lastName + " " + firstName + ".");
 
-        //Conditionals
-        if (name == "Carter")
-        {
-            Console.WriteLine("Welcome Carter!");
-        } 
-        else 
-        {
-            Console.WriteLine("Intruder!");
-        }
     }
 }
