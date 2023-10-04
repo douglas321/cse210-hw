@@ -29,7 +29,7 @@ class Program
                     System.Console.WriteLine($"{generatePrompt.promptsList[promptNumber]}");
                     //give text box and set as userEntry
                     string userEntry = Console.ReadLine();
-                    //save date, prompt, and entry and ad it to entrys list
+                    //save date, prompt, and entry and add it to entrys list
                     entry1._date = entry1.GetDate();
                     entry1._prompt = generatePrompt.promptsList[promptNumber];
                     entry1._entry = userEntry;
@@ -48,6 +48,8 @@ class Program
                 case "3": //Load
                 break;
                 case "4": //Save
+                    var journal = new Journal();
+                    journal.SaveFile(entrys);
                 break;
                 default: //Quit
                     running = false;
