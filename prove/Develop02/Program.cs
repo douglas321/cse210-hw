@@ -5,12 +5,10 @@ class Program
     static void Main(string[] args)
     {
         
-        List<Entry> entrys = new List<Entry>();
-        
         bool running = true;
+        var myJournal = new Journal();
         while (running)
         {
-            
             Console.WriteLine("Please select one of the following: \n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit");
             string userInput = Console.ReadLine();
 
@@ -33,23 +31,21 @@ class Program
                     entry1._date = entry1.GetDate();
                     entry1._prompt = generatePrompt.promptsList[promptNumber];
                     entry1._entry = userEntry;
-
-                    entrys.Add(entry1);  
+                    //add entry to list in Journal
+                    myJournal._entrys.Add(entry1);
                 break;
 
                 case "2": //Display
-                    foreach (Entry entry in entrys)
-                    {
-                        entry.DisplayEntrys();
-                    }
-                   
+
+                   myJournal.Display();
+
                 break;
 
                 case "3": //Load
                 break;
                 case "4": //Save
-                    var journal = new Journal();
-                    journal.SaveFile(entrys);
+                    //var journal = new Journal();
+                    //journal.SaveFile(entrys);
                 break;
                 default: //Quit
                     running = false;
