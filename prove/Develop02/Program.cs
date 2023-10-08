@@ -42,10 +42,14 @@ class Program
                 break;
 
                 case "3": //Load
+
+                    myJournal.LoadFile();
+
                 break;
                 case "4": //Save
-                    //var journal = new Journal();
-                    //journal.SaveFile(entrys);
+
+                    myJournal.SaveFile();
+
                 break;
                 default: //Quit
                     running = false;
