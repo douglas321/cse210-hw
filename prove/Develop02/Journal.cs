@@ -15,8 +15,11 @@ public class Journal
 
     //save
     public void SaveFile()
+    
     {
-        using (StreamWriter outputFile = new StreamWriter("myFile.txt"))
+       Console.WriteLine("What would you like to name your new journal?");
+       string myFile = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter($"{myFile}.txt"))
         {
             int x = 0;
             foreach (Entry entry in _entrys)
