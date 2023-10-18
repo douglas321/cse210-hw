@@ -59,6 +59,6 @@ public class Scripture{
     {
         bool isCompletleyHidden = _words.All(word => word.IsHidden);
         
-        return !isCompletleyHidden;
+        return isCompletleyHidden;
     }
 }
