@@ -23,28 +23,28 @@ class Program
             Console.WriteLine("\n\nPress 'Enter' or type quit");
             string userInput = Console.ReadLine();
 
-            
+            //enter, hide words
             if (userInput.Length == 0 && !isCompletleyHidden)
             {
                 Console.Clear();
                 reference.Display();
                 scripture.Hide();
                 scripture.Display();
-                //enter, hide words
-                
             }
-            
+            //quit
             else if (userInput == "quit" || userInput == "Quit")
             {
                 runProgram = false;
             }
+            //scripture is completely hidden
             else if (isCompletleyHidden)
             {
                 runProgram = false;
             }
+            //invalid input
             else
             {
-                System.Console.WriteLine("invalid input");
+                System.Console.WriteLine("\nInvalid Input");
             }
             
         }
