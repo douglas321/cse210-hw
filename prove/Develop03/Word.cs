@@ -1,17 +1,52 @@
 using System;
 
 public class Word{
-    private bool _isHidden;
 
-    public bool Get_isHidden
+    private string _word;
+
+    public string WordSetter
     {
-        return _isHidden
+        set
+        {
+            _word = value;
+        }
     }
 
-    //Hide
+    private bool _isHidden = false;
 
-    //Show
+    public bool IsHidden
+    {
+        get
+        {
+            return _isHidden;
+        }
 
-    //Get Rendered Text
+        set
+        {
+            _isHidden = value;
+        }
+    }
+
+
+    //Display basically
+    public void Display()
+    {
+        int character = 0;
+        int wordLength = _word.Length;
+        //if the word is not hidden, write a "-" for each character in the Word
+        if (_isHidden)
+        {
+            while (character != wordLength)
+            {
+                Console.Write("-");
+                character += 1;
+            }
+            Console.Write(" ");
+        }
+        else
+        {
+            Console.Write($"{_word} ");
+        }
+    }
 
 }
