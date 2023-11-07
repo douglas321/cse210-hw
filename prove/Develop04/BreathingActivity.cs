@@ -3,28 +3,39 @@ using System.Threading;
 
 class BreathingActivity : Activity
 {
-    public BreathingActivity() : base("Breathing", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.") { }
-
-    public void StartBreathingActivity()
-    {
-        
-        StartActivity();
-
-        Console.WriteLine("Let's begin...");
-        int secondsElapsed = 0;
-
-        while (secondsElapsed < Duration)
+    public BreathingActivity(string activity, string description)
         {
-            Console.WriteLine("Breathe in...");
-            Thread.Sleep(4000); // Wait for 4 seconds
-
-            Console.WriteLine("Breathe out...");
-            Thread.Sleep(4000); // Wait for 4 seconds
-
-            secondsElapsed += 8; // Each cycle takes 8 seconds
+            _activity = activity;
+            _description = description;
         }
 
-        EndActivity();
-    }
+    public void StartBreathingActivity()
+        {
+            DateTime startTime = DateTime.Now;
+            DateTime futureTime = startTime.AddSeconds(_duration);
+
+            DateTime currentTime = DateTime.Now;
+            bool breath = true;
+            while(currentTime < futureTime)
+            {
+                
+                if (breath){
+                    Console.WriteLine("Breath in...");
+
+                    CountDownAnimation(4);
+
+                    breath = false;
+                    currentTime = DateTime.Now;
+                }
+                else{
+                    Console.WriteLine("Breath out...");
+
+                    CountDownAnimation(4);
+
+                    breath = true;
+                    currentTime = DateTime.Now;
+                }
+            }
+        }
 }
 
