@@ -1,0 +1,2 @@
+0
+CheckListGoal:run,run every day,10,False,50,3,0
